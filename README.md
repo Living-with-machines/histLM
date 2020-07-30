@@ -1,1 +1,1 @@
-# Neural network language models for historical datasets
+# Neural network language models for historical research
