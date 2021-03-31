@@ -1,8 +1,9 @@
 <div align="center">
     <br>
     <p align="center">
-    <h1>Neural network language models for historical research</h1>
+    <h1>histLM</h1>
     </p>
+    <h2>Neural network language models for historical research</h2>
 </div>
  
 <p align="center">
