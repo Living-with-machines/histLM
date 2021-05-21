@@ -118,6 +118,7 @@ git clone https://github.com/Living-with-machines/histLM.git
 ```
 pip install torch
 pip install transformers
+pip install flair
 pip install notebook
 pip install jupyter-client
 pip install jupyter-core
