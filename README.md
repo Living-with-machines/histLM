@@ -60,30 +60,33 @@ After downloading the language models (refer to [Download section](#download)), 
 ```bash
 histLM
 ├── README.md
-├── codes
-│   └── *.py files
-└── histLM_dataset
-    ├── README.md
-    ├── bert
-    │   ├── bert_1760_1850
-    │   ├── bert_1760_1900
-    │   ├── bert_1850_1875
-    │   ├── bert_1875_1890
-    │   └── bert_1890_1900
-    ├── fasttext
-    │   ├── ft_1760_1850
-    │   └── ft_1760_1900
-    ├── flair
-    │   └── flair_1760_1900
-    └── word2vec
-        ├── w2v_1760_1850
-        └── w2v_1760_1900
+├── histLM_dataset
+│   ├── README.md
+│   ├── bert
+│   │   ├── bert_1760_1850
+│   │   ├── bert_1760_1900
+│   │   ├── bert_1850_1875
+│   │   ├── bert_1875_1890
+│   │   └── bert_1890_1900
+│   ├── fasttext
+│   │   ├── ft_1760_1850
+│   │   └── ft_1760_1900
+│   ├── flair
+│   │   └── flair_1760_1900
+│   └── word2vec
+│       ├── w2v_1760_1850
+│       └── w2v_1760_1900
+└── notebooks
+    ├── BERT_model.ipynb
+    ├── Flair_model.ipynb
+    ├── fastText_model.ipynb
+    └── word2vec_model.ipynb
 ```
 
-Next, open one of the jupyter notebooks stored in `codes` directory:
+Next, open one of the jupyter notebooks stored in `notebooks` directory:
 
 ```bash
-$ cd codes
+$ cd notebooks
 $ jupyter notebook
 ```
 
