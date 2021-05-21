@@ -21,6 +21,7 @@ Table of contents
     - [Load models](#load-models)
 - [Installation and setup](#installation)
   - [Method 1: Anaconda + install dependencies manually](#method-1)
+- [Language models in use](#language-models-in-use)
 
 ## Language models
 
@@ -123,3 +124,10 @@ pip install notebook
 ```bash
 python -m ipykernel install --user --name py38_histLM --display-name "Python (py38_histLM)"
 ```
+
+## Language models in use
+
+So far, the language models presented in this repository have been used in the following projects:
+* Living Machines: A Study of Atypical Animacy (COLING 2020): [repository](https://github.com/Living-with-machines/AtypicalAnimacy) and [paper](https://www.aclweb.org/anthology/2020.coling-main.400/).
+* When Time Makes Sense: A Historically-Aware Approach to Targeted Sense Disambiguation (Findings of ACL 2021): [repository](https://github.com/Living-with-machines/TargetedSenseDisambiguation) and paper (forthcoming).
+* Assessing the Impact of OCR Quality on Downstream NLP Tasks (ARTIDIGH 2020): [repository](https://github.com/Living-with-machines/lwm_ARTIDIGH_2020_OCR_impact_downstream_NLP_tasks) and [paper](https://www.repository.cam.ac.uk/handle/1810/304987).
