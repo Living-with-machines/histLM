@@ -3,7 +3,7 @@
     <p align="center">
     <h1>histLM</h1>
     </p>
-    <h2>Neural network language models for historical research</h2>
+    <h2>Neural language models for historical research</h2>
 </div>
  
 <p align="center">
@@ -16,8 +16,79 @@
 Table of contents
 -----------------
 
+- [Language models](#language-models)
+    - [Download](#architectures)
+    - [Load models](#load-models)
 - [Installation and setup](#installation)
   - [Method 1: Anaconda + install dependencies manually](#method-1)
+- [Language models in use](#language-models-in-use)
+
+## Language models
+
+### Download
+We have pretrined four types of neural language models using a large historical dataset. These models can be downloaded from [zenodo](). The directory structure is as follows:
+
+```bash
+histLM_dataset
+├── README.md
+├── bert
+│   ├── bert_1760_1850
+│   ├── bert_1760_1900
+│   ├── bert_1850_1875
+│   ├── bert_1875_1890
+│   └── bert_1890_1900
+├── fasttext
+│   ├── ft_1760_1850
+│   └── ft_1760_1900
+├── flair
+│   └── flair_1760_1900
+└── word2vec
+    ├── w2v_1760_1850
+    └── w2v_1760_1900
+```
+
+Currently, we have the following architectures:
+- BERT, 5 models
+- Flair, 1 model
+- word2vec, 2 models
+- fastText, 2 models
+
+### Load models
+
+After downloading the language models (refer to [Download section](#download)), put the uncompressed directory inside `histLM` directory:
+
+```bash
+histLM
+├── README.md
+├── histLM_dataset
+│   ├── README.md
+│   ├── bert
+│   │   ├── bert_1760_1850
+│   │   ├── bert_1760_1900
+│   │   ├── bert_1850_1875
+│   │   ├── bert_1875_1890
+│   │   └── bert_1890_1900
+│   ├── fasttext
+│   │   ├── ft_1760_1850
+│   │   └── ft_1760_1900
+│   ├── flair
+│   │   └── flair_1760_1900
+│   └── word2vec
+│       ├── w2v_1760_1850
+│       └── w2v_1760_1900
+└── notebooks
+    ├── BERT_model.ipynb
+    ├── Flair_model.ipynb
+    ├── fastText_model.ipynb
+    └── word2vec_model.ipynb
+```
+
+Next, open one of the jupyter notebooks stored in `notebooks` directory:
+
+```bash
+$ cd notebooks
+$ jupyter notebook
+```
 
 ## Installation
 
@@ -48,7 +119,14 @@ git clone https://github.com/Living-with-machines/histLM.git
 * Install dependencies:
 
 ```
-# Install dependencies
+pip install torch
+pip install transformers
+pip install flair
+pip install gensim
+pip install notebook
+pip install jupyter-client
+pip install jupyter-core
+pip install ipywidgets
 ```
 
 * To allow the newly created `py38_histLM` environment to show up in the notebooks:
@@ -56,3 +134,10 @@ git clone https://github.com/Living-with-machines/histLM.git
 ```bash
 python -m ipykernel install --user --name py38_histLM --display-name "Python (py38_histLM)"
 ```
+
+## Language models in use
+
+So far, the language models presented in this repository have been used in the following projects:
+* When Time Makes Sense: A Historically-Aware Approach to Targeted Sense Disambiguation (Findings of ACL 2021): [repository](https://github.com/Living-with-machines/TargetedSenseDisambiguation) and paper (forthcoming).
+* Living Machines: A Study of Atypical Animacy (COLING 2020): [repository](https://github.com/Living-with-machines/AtypicalAnimacy) and [paper](https://www.aclweb.org/anthology/2020.coling-main.400/).
+* Assessing the Impact of OCR Quality on Downstream NLP Tasks (ARTIDIGH 2020): [repository](https://github.com/Living-with-machines/lwm_ARTIDIGH_2020_OCR_impact_downstream_NLP_tasks) and [paper](https://www.repository.cam.ac.uk/handle/1810/304987).
