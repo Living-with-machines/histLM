@@ -3,7 +3,7 @@
     <p align="center">
     <h1>histLM</h1>
     </p>
-    <h2>Neural network language models for historical research</h2>
+    <h2>Neural language models for historical research</h2>
 </div>
  
 <p align="center">
