@@ -25,7 +25,26 @@ Table of contents
 ## Language models
 
 ### Download
-We have pretrined four types of neural language models using a large historical dataset. These models can be downloaded from [zenodo]().
+We have pretrined four types of neural language models using a large historical dataset. These models can be downloaded from [zenodo](). The directory structure is as follows:
+
+```bash
+histLM_dataset
+├── README.md
+├── bert
+│   ├── bert_1760_1850
+│   ├── bert_1760_1900
+│   ├── bert_1850_1875
+│   ├── bert_1875_1890
+│   └── bert_1890_1900
+├── fasttext
+│   ├── ft_1760_1850
+│   └── ft_1760_1900
+├── flair
+│   └── flair_1760_1900
+└── word2vec
+    ├── w2v_1760_1850
+    └── w2v_1760_1900
+```
 
 Currently, we have the following architectures:
 - BERT, 5 models
