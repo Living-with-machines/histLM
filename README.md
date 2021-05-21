@@ -116,7 +116,12 @@ git clone https://github.com/Living-with-machines/histLM.git
 * Install dependencies:
 
 ```
+pip install torch
+pip install transformers
 pip install notebook
+pip install jupyter-client
+pip install jupyter-core
+pip install ipywidgets
 ```
 
 * To allow the newly created `py38_histLM` environment to show up in the notebooks:
