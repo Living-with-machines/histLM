@@ -54,7 +54,32 @@ Currently, we have the following architectures:
 
 ### Load models
 
-After downloading the language models [here](#download), open the jupyter notebook stored in `codes` directory:
+After downloading the language models (refer to [Download section](#download)), put the uncompressed directory inside `histLM` directory:
+
+```bash
+histLM
+├── README.md
+├── codes
+│   └── *.py files
+└── histLM_dataset
+    ├── README.md
+    ├── bert
+    │   ├── bert_1760_1850
+    │   ├── bert_1760_1900
+    │   ├── bert_1850_1875
+    │   ├── bert_1875_1890
+    │   └── bert_1890_1900
+    ├── fasttext
+    │   ├── ft_1760_1850
+    │   └── ft_1760_1900
+    ├── flair
+    │   └── flair_1760_1900
+    └── word2vec
+        ├── w2v_1760_1850
+        └── w2v_1760_1900
+```
+
+Next, open one of the jupyter notebooks stored in `codes` directory:
 
 ```bash
 $ cd codes
