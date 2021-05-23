@@ -25,13 +25,14 @@ Table of contents
 - [Language models in use](#language-models-in-use)
 - [Installation and setup](#installation)
   - [Method 1: Anaconda + install dependencies manually](#method-1)
+- [License](#license)
 
 ## Language models
 
 ### Download
 We have pre-trained four types of neural language models trained on a large historical dataset of books in English, published between 1760-1900 and comprised of ~5.1 billion tokens. The language model architectures include static (**word2vec** and **fastText**) and contextualized models (**BERT** and **Flair**). For each architecture, we trained a model instance using the whole dataset. Additionally, we trained separate instances on text published before 1850 for the two static models, and four instances considering different time slices for BERT.
 
-:warning: The language models can be downloaded from [zenodo](http://doi.org/10.5281/zenodo.4782245). 
+:warning: The language models can be downloaded from [zenodo](http://doi.org/10.5281/zenodo.4782245). (see [License](#license))
 
 Each `.zip` file on [zenodo](http://doi.org/10.5281/zenodo.4782245) contains model instances for one neural network architecture (i.e., bert, flair, fasttext and word2vec). After unzipping the four .zip files, the directory structure is as follows:
 
@@ -184,3 +185,9 @@ pip install ipywidgets
 ```bash
 python -m ipykernel install --user --name py38_histLM --display-name "Python (py38_histLM)"
 ```
+
+## License
+
+**Codes/notebooks** are released under MIT License.
+
+**Models** are released under open license CC BY 4.0, available at https://creativecommons.org/licenses/by/4.0/legalcode.
