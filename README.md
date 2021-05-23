@@ -10,9 +10,6 @@
     <a href="https://github.com/Living-with-machines/histLM/workflows/Continuous%20integration/badge.svg">
         <img alt="Continuous integration badge" src="https://github.com/Living-with-machines/histLM/workflows/Continuous%20integration/badge.svg">
     </a>
-    <a href="./LICENSE">
-        <img alt="License" src="https://img.shields.io/badge/License-MIT-yellow.svg">
-    </a>
     <br/>
 </p>
 
