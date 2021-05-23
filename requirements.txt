@@ -1,0 +1,8 @@
+torch
+transformers
+flair
+gensim
+notebook
+jupyter-client
+jupyter-core
+ipywidgets
