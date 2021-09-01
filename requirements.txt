@@ -1,8 +1,8 @@
-torch
-transformers
-flair
-gensim
-notebook
-jupyter-client
-jupyter-core
-ipywidgets
+torch==1.9.0
+transformers==4.10.0
+flair==0.9
+gensim==3.8.3
+notebook==6.4.3
+jupyter-client==7.0.2
+jupyter-core==4.7.1
+ipywidgets==7.6.4
