@@ -144,8 +144,6 @@ We strongly recommend installation via Anaconda:
 
 * Refer to [Anaconda website and follow the instructions](https://docs.anaconda.com/anaconda/install/).
 
-### Method 1
-
 * Create a new environment for `histLM` called `py38_histLM`:
 
 ```bash
