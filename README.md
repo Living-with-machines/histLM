@@ -169,6 +169,12 @@ git clone https://github.com/Living-with-machines/histLM.git
 * Install dependencies:
 
 ```
+pip install -r requirements.txt
+```
+
+Alternatively:
+
+```
 pip install torch==1.9.0
 pip install transformers==4.10.0
 pip install flair==0.9
