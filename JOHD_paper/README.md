@@ -110,5 +110,113 @@ from flair.data import Dictionary
 Dictionary = Dictionary.load('chars')
 ```
 
-For training, we used one NVIDIA Tesla K80 GPUs, and it took 533.6 GPU hours for one epoch (We trained this model instance using the whole dataset with the following hyperparameters).
+For training, we used one NVIDIA Tesla K80 GPUs, and it took 533.6 GPU hours for one epoch (We trained this model instance using the whole dataset).
 
+## BERT
+
+To fine-tune BERT model instances, we started with a contemporary model: `BERT base uncased` (https://github.com/google-research/bert), hereinafter referred to as *BERT-base* (Devlin, Chang, Lee, & Toutanova, 2019; Wolf et al., 2019). This instance was then fine-tuned on the earliest time period (i.e., books predating 1850). For the consecutive period (1850-1875), we used the pre-1850 language model instance as a starting point and continued fine-tuning with texts from the following period. This procedure of consecutive incremental fine-tuning was repeated for the other two time periods.  
+
+We used the original BERT-base tokenizer as implemented by [HuggingFace](https://github.com/huggingface/transformers) (Wolf et al., 2019). We did not train new tokenizers for each time period. This way, the resulting language model instances can be compared easily with no further processing or adjustments. The tokenized and lowercased sentences were fed to the language model fine-tuning tool in which only the masked language model (MLM) objective was optimized. We used a batch size of 5 per GPU and fine-tuned for 1 epoch over the books in each time-period. The choice of batch size was dictated by the available GPU memory (we used 4x NVIDIA Tesla K80 GPUs in parallel). Similar to the original BERT pre-training procedure, we used the Adam optimizer  (Kingma & Ba, 2014) with a learning rate of 0.0001, b1 = 0.9, b2 = 0.999 and L2 weight decay of 0.01. In our fine-tuning procedure, we used a linear learning-rate warm-up over the first 2,000 steps. A dropout probability of 0.1 was applied in all layers.
+
+### bert_1760_1900
+
+Refer to the [previous section](#bert) for general description of pre-training procedure for our BERT language models. For training, we used 4x NVIDIA Tesla K80 GPUs, and it took 301 hours for one epoch. We fine-tuned `bert-base-uncased` using the whole dataset with the following hyperparameters:
+
+```python
+min_sentence_length=1
+model_type=bert
+model_name_or_path=bert-base-uncased
+mlm_probability=0.15
+num_train_epochs=1.0
+max_steps=-1
+learning_rate=1e-4
+weight_decay=0.01 
+adam_epsilon=1e-8 
+max_grad_norm=1.0 
+warmup_steps=2000 
+logging_steps=10000 
+save_steps=10000 
+save_total_limit=10 
+per_gpu_train_batch_size=5 
+gradient_accumulation_steps=1 
+seed=42 
+block_size=512 
+```
+
+Tokenizer config file:
+
+```python
+{"do_lower_case": true, "max_len": 512}
+```
+
+`config.json`:
+
+```python
+{
+  "_num_labels": 2,
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "bos_token_id": null,
+  "do_sample": false,
+  "early_stopping": false,
+  "eos_token_ids": null,
+  "finetuning_task": null,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 768,
+  "id2label": {
+    "0": "LABEL_0",
+    "1": "LABEL_1"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 3072,
+  "is_decoder": false,
+  "is_encoder_decoder": false,
+  "label2id": {
+    "LABEL_0": 0,
+    "LABEL_1": 1
+  },
+  "layer_norm_eps": 1e-12,
+  "length_penalty": 1.0,
+  "max_length": 20,
+  "max_position_embeddings": 512,
+  "min_length": 0,
+  "model_type": "bert",
+  "no_repeat_ngram_size": 0,
+  "num_attention_heads": 12,
+  "num_beams": 1,
+  "num_hidden_layers": 12,
+  "num_return_sequences": 1,
+  "output_attentions": false,
+  "output_hidden_states": false,
+  "output_past": true,
+  "pad_token_id": 0,
+  "pruned_heads": {},
+  "repetition_penalty": 1.0,
+  "temperature": 1.0,
+  "top_k": 50,
+  "top_p": 1.0,
+  "torchscript": false,
+  "type_vocab_size": 2,
+  "use_bfloat16": false,
+  "vocab_size": 30522
+}
+```
+
+### bert_1760_1850
+
+We trained this model instance on text published before 1850. The hyperparameters are the same as [bert_1760_1900](#bert_1760_1900). The only differences are: 1) the input text data; 2) fine-tune model: `bert-base-uncased`.
+
+### bert_1850_1875
+
+We trained this model instance on text published between 1850-1875. The hyperparameters are the same as [bert_1760_1900](#bert_1760_1900). The only differences are: 1) the input text data; 2) fine-tune model: `bert_1760_1850`.
+
+### bert_1875_1890
+
+We trained this model instance on text published between 1875-1890. The hyperparameters are the same as [bert_1760_1900](#bert_1760_1900). The only differences are: 1) the input text data; 2) fine-tune model: `bert_1850_1875`.
+
+### bert_1890_1900
+
+We trained this model instance on text published between 1890-1900. The hyperparameters are the same as [bert_1760_1900](#bert_1760_1900). The only differences are: 1) the input text data; 2) fine-tune model: `bert_1875_1890`.
