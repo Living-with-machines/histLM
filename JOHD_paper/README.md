@@ -18,7 +18,6 @@ w2v_args = Namespace(
     remove_puncs=False,                    # remove punctuations
     remove_stop=False,                     # remove stop words
     min_sentence_len=5,                    # sentences with < min_sentence_length will be skipped
-
     size=300,                              # Dimensionality of word embeddings
     alpha=0.03,                            # The initial learning rate.
     min_alpha=0.0007,                      # Learning rate will linearly drop to min_alpha as training progresses.
@@ -39,3 +38,50 @@ w2v_args = Namespace(
     seed=1364,
 )
 ```
+
+### `w2v_1760_1850`
+
+We trained this model instance on text published before 1850. The hyperparameters are the same as [w2v_1760_1900](#w2v_1760_1900). The only difference is the input text data.
+
+## fastText
+
+We trained the fastText (Bojanowski et al., 2016) models as implemented in the Gensim library (Rehurek & Sojka, 2011). 
+There are two fastText models:
+
+### `ft_1760_1900`
+
+We trained this model instance using the whole dataset with the following hyperparameters:
+
+```python
+fasttext_args = Namespace(
+    make_lower_case=True,                  # make lower-casse before training
+    remove_words_with_numbers=False,       # remove words with numbers
+    remove_puncs=False,                    # remove punctuations
+    remove_stop=False,                     # remove stop words
+    min_sentence_len=5,                    # sentences with < min_sentence_length will be skipped
+    size=300,                              # Dimensionality of the word vectors.
+    alpha=0.03,                            # The initial learning rate.
+    min_alpha=0.0007,                      # Learning rate will linearly drop to min_alpha as training progresses.
+    sg=1,                                  # Training algorithm: skip-gram if sg=1, otherwise CBOW.
+    hs=0,                                  # If 1, hierarchical softmax will be used for model training. If set to 0, and negative is non-zero, negative sampling will be used.
+    negative=20,                           # If > 0, negative sampling will be used, the int for negative specifies how many �~@~\noise words�~@~] should be drawn (usually between 5-20). If set to 0, no negative sampling is used.
+    epochs=1,
+    min_count=20,                          # The model ignores all words with total frequency lower than this.
+    window=5,                              # The maximum distance between the current and predicted word within a sentence.
+    sample=1e-3,                           # The threshold for configuring which higher-frequency words are randomly downsampled, useful range is (0, 1e-5).
+    workers=16,
+    cbow_mean=1,                           # If 0, use the sum of the context word vectors. If 1, use the mean, only applies when cbow is used.
+    null_word=0,                           #
+    trim_rule=None,                        #
+    sorted_vocab=1,                        # If 1, sort the vocabulary by descending frequency before assigning word indices.
+    batch_words=10000,                     # Target size (in words) for batches of examples passed to worker threads (and thus cython routines).(Larger batches will be passed if individual texts are longer than 10000 words, but the standard cython code truncates to that maximum.)
+    seed=1364,                             # Seed for the random number generator.
+    word_ngrams=1,                         # If 1, uses enriches word vectors with subword(n-grams) information. If 0, this is equivalent to Word2Vec.
+    min_n=2,                               # Minimum length of char n-grams to be used for training word representations.
+    max_n=5,                               # Max length of char ngrams to be used for training word representations. Set max_n to be lesser than min_n to avoid char ngrams being used.
+    bucket=2000000)                        # Character ngrams are hashed into a fixed number of buckets, in order to limit the memory usage of the model. This option specifies the number of buckets used by the model.
+```
+
+### `ft_1760_1850`
+
+We trained this model instance on text published before 1850. The hyperparameters are the same as [ft_1760_1900](#ft_1760_1900). The only difference is the input text data.
