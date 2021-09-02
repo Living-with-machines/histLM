@@ -85,3 +85,30 @@ fasttext_args = Namespace(
 ### `ft_1760_1850`
 
 We trained this model instance on text published before 1850. The hyperparameters are the same as [ft_1760_1900](#ft_1760_1900). The only difference is the input text data.
+
+
+## Flair
+
+Flair is a character language model based on the Long short-term memory (LSTM) variant of recurrent neural networks (Akbik et al., 2019;  Hochreiter & Schmidhuber, 1997). We trained this model instance using the whole dataset with the following hyperparameters:
+
+```python
+flair_args = Namespace(
+    workers=4,
+    epochs=1,
+    sequence_length=250,
+    is_forward_lm=True,                    # forward or backward Language Model?
+    is_character_level=True,
+    mini_batch_size=100,
+    hidden_size=2048,
+    nlayers=1,
+    random_seed=1364
+    )
+
+# Dictionary
+# load the default character dictionary
+from flair.data import Dictionary
+Dictionary = Dictionary.load('chars')
+```
+
+For training, we used one NVIDIA Tesla K80 GPUs, and it took 533.6 GPU hours for one epoch (We trained this model instance using the whole dataset with the following hyperparameters).
+
