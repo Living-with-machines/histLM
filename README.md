@@ -22,6 +22,7 @@ Table of contents
 - [Language models in use](#language-models-in-use)
 - [Installation and setup](#installation)
   - [Anaconda + install dependencies manually](#installation)
+- [How to cite](#how-to-cite)
 - [License](#license)
 
 ## Language models
@@ -190,6 +191,16 @@ pip install ipywidgets==7.6.4
 ```bash
 python -m ipykernel install --user --name py38_histLM --display-name "Python (py38_histLM)"
 ```
+
+## How to cite
+
+To cite histLM or any of the language models: 
+
+```text
+Hosseini, K., Beelen, K., Colavizza, G., & Coll Ardanuy, M. (2021). Neural Language Models for Nineteenth-Century English. Journal of Open Humanities Data, 7: 22, pp. 1–6. DOI: https://doi.org/10.5334/johd.48
+```
+
+Link (Journal of Open Humanities Data): http://doi.org/10.5334/johd.48
 
 ## License
 
