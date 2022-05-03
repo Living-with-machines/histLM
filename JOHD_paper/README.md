@@ -118,6 +118,8 @@ To fine-tune BERT model instances, we started with a contemporary model: `BERT b
 
 We used the original BERT-base tokenizer as implemented by [HuggingFace](https://github.com/huggingface/transformers) (Wolf et al., 2019). We did not train new tokenizers for each time period. This way, the resulting language model instances can be compared easily with no further processing or adjustments. The tokenized and lowercased sentences were fed to the language model fine-tuning tool in which only the masked language model (MLM) objective was optimized. We used a batch size of 5 per GPU and fine-tuned for 1 epoch over the books in each time-period. The choice of batch size was dictated by the available GPU memory (we used 4x NVIDIA Tesla K80 GPUs in parallel). Similar to the original BERT pre-training procedure, we used the Adam optimizer  (Kingma & Ba, 2014) with a learning rate of 0.0001, b1 = 0.9, b2 = 0.999 and L2 weight decay of 0.01. In our fine-tuning procedure, we used a linear learning-rate warm-up over the first 2,000 steps. A dropout probability of 0.1 was applied in all layers.
 
+:warning: We used transformers v2.5.1 (https://github.com/huggingface/transformers/releases/tag/v2.5.1), and the script that we used for fine-tuning was largely based on https://github.com/huggingface/transformers/blob/b90745c5901809faef3136ed09a689e7d733526c/examples/run_language_modeling.py
+
 ### bert_1760_1900
 
 Refer to the [previous section](#bert) for general description of pre-training procedure for our BERT language models. For training, we used 4x NVIDIA Tesla K80 GPUs, and it took 301 hours for one epoch. We fine-tuned `bert-base-uncased` using the whole dataset with the following hyperparameters:
