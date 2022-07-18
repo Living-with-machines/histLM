@@ -1,6 +1,6 @@
 # Neural Language Models for Nineteenth-Century English: preprocessing and hyperparameters
 
-Here, we provide additional information on the neural language models for nineteenth-century English, published (as of Sep. 2nd, 2021, the data paper is *under-review*) in the Journal of Open Humanities Data (JOHD). This includes preprocessing steps, hyperparameters and other information required to reproduce the models.
+Here, we provide additional information on the neural language models for nineteenth-century English, published in the Journal of Open Humanities Data (JOHD). This includes preprocessing steps, hyperparameters and other information required to reproduce the models.
 
 ## Word2vec
 
