@@ -84,7 +84,7 @@ histLM_dataset
 
 ### Download BERT models from Hugging Face
 
-In addition to downloading the [models from zenodo](#Download-from-zenodo), the BERT models can be downloaded from Hugging Face, see: https://huggingface.co/khosseini
+In addition to downloading the [models from zenodo](#download-from-zenodo), the BERT models can be downloaded from Hugging Face Hub, see: https://huggingface.co/khosseini
 
 - bert_1760_1900 : https://huggingface.co/khosseini/bert_1760_1900
 - bert_1760_1850: https://huggingface.co/khosseini/bert_1760_1850
