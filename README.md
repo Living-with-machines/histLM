@@ -17,7 +17,8 @@ Table of contents
 -----------------
 
 - [Language models](#language-models)
-    - [Download](#Download)
+    - [Download from zenodo](#download-from-zenodo)
+    - [Download BERT models from Hugging Face](#download-bert-models-from-hugging-face)
     - [Load models](#load-models)
 - [Language models in use](#language-models-in-use)
 - [Installation and setup](#installation)
@@ -27,7 +28,7 @@ Table of contents
 
 ## Language models
 
-### Download
+### Download from zenodo
 We have pre-trained four types of neural language models trained on a large historical dataset of books in English, published between 1760-1900 and comprised of ~5.1 billion tokens. The language model architectures include word type embeddings (**word2vec** and **fastText**) and contextualized models (**BERT** and **Flair**). For each architecture, we trained a model instance using the whole dataset. Additionally, we trained separate instances on text published before 1850 for the type embeddings (i.e., **word2vec** and **fastText**), and four instances considering different time slices for BERT.
 
 :warning: The language models can be downloaded from [zenodo](http://doi.org/10.5281/zenodo.4782245). (see [License](#license))
@@ -80,6 +81,16 @@ histLM_dataset
     └── w2v_1760_1900
         └── ...
 ```
+
+### Download BERT models from Hugging Face
+
+In addition to downloading the [models from zenodo](#Download-from-zenodo), the BERT models can be downloaded from Hugging Face, see: https://huggingface.co/khosseini
+
+- bert_1760_1900 : https://huggingface.co/khosseini/bert_1760_1900
+- bert_1760_1850: https://huggingface.co/khosseini/bert_1760_1850
+- bert_1850_1875: https://huggingface.co/khosseini/bert_1850_1875
+- bert_1875_1890: https://huggingface.co/khosseini/bert_1875_1890
+- bert_1890_1900: https://huggingface.co/khosseini/bert_1890_1900
 
 ### Load models
 
