@@ -84,13 +84,13 @@ histLM_dataset
 
 ### Download BERT models from Hugging Face
 
-In addition to downloading the [models from zenodo](#download-from-zenodo), the BERT models can be downloaded from Hugging Face Hub, see: https://huggingface.co/khosseini
+In addition to downloading the [models from zenodo](#download-from-zenodo), the BERT models can be downloaded from Hugging Face Hub, see: https://huggingface.co/Livingwithmachines
 
-- bert_1760_1900 : https://huggingface.co/khosseini/bert_1760_1900
-- bert_1760_1850: https://huggingface.co/khosseini/bert_1760_1850
-- bert_1850_1875: https://huggingface.co/khosseini/bert_1850_1875
-- bert_1875_1890: https://huggingface.co/khosseini/bert_1875_1890
-- bert_1890_1900: https://huggingface.co/khosseini/bert_1890_1900
+- bert_1760_1900 : https://huggingface.co/Livingwithmachines/bert_1760_1900
+- bert_1760_1850: https://huggingface.co/Livingwithmachines/bert_1760_1850
+- bert_1850_1875: https://huggingface.co/Livingwithmachines/bert_1850_1875
+- bert_1875_1890: https://huggingface.co/Livingwithmachines/bert_1875_1890
+- bert_1890_1900: https://huggingface.co/Livingwithmachines/bert_1890_1900
 
 ### Load models
 
