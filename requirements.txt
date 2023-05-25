@@ -1,7 +1,7 @@
 torch==1.11.0
 transformers==4.10.0
 flair==0.9
-gensim==3.8.3
+gensim==4.3.1
 notebook==6.4.12
 jupyter-client==7.0.2
 jupyter-core==4.7.1
