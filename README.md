@@ -153,6 +153,7 @@ So far, the language models presented in this repository have been used in the f
 * When Time Makes Sense: A Historically-Aware Approach to Targeted Sense Disambiguation (Findings of ACL: ACL-IJCNLP 2021): [repository](https://github.com/Living-with-machines/TargetedSenseDisambiguation) and [paper](https://aclanthology.org/2021.findings-acl.243/).
 * Living Machines: A Study of Atypical Animacy (COLING 2020): [repository](https://github.com/Living-with-machines/AtypicalAnimacy) and [paper](https://www.aclweb.org/anthology/2020.coling-main.400/).
 * Assessing the Impact of OCR Quality on Downstream NLP Tasks (ARTIDIGH 2020): [repository](https://github.com/Living-with-machines/lwm_ARTIDIGH_2020_OCR_impact_downstream_NLP_tasks) and [paper](https://www.repository.cam.ac.uk/handle/1810/304987).
+* 'The Living Machine: A Computational Approach to the Nineteenth-Century Language of Technology" in _Technology and Culture_ (2023) [Paper](https://muse.jhu.edu/pub/1/article/903976) and [Repository](https://github.com/Living-with-machines/TheLivingMachine)
 
 ## Installation
 
